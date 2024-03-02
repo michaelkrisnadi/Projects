@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1709391141 source:c:\users\mikek\onedrive\documents\university\projects (github folder)\contactmanagementsystem\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<conio.h>
+
+1709391141 source:c:\users\mikek\onedrive\documents\university\projects (github folder)\contactmanagementsystem\additionfunc.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
