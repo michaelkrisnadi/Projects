@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template><star /></template>
+  </category>
+
+  <category>
+      <pattern>What is the opening and closing time</pattern>
+      <template>The restaurant opens at 8 AM and closes at 10 PM</template>
+  </category>
+
+  <category>
+      <pattern>* MENU *</pattern>
+      <template>
+          FOOD<br></br>
+          Chicken rice ($3)<br></br>
+          Fried noodle ($3)<br></br>
+          Tenderloin steak ($9)<br></br>
+          <split />
+          BEVERAGES<br></br>
+          Lemon tea ($1)<br></br>
+          Tea ($1)<br></br>
+          Coffee ($1)
+      </template>
+  </category>
+
+  <category>
+      <pattern>* MENU</pattern>
+      <template>
+          <srai>* MENU *</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>MENU</pattern>
+      <template>
+          <srai>* MENU *</srai>
+      </template>
+  </category>
+
+  <category>
+      <pattern>^ SPECIAL MENU ^</pattern>
+      <template>
+          Today's specials:<br></br>
+          Beef quiche ($2.50)<br></br>
+          Lasagna ($2.75)<br></br>
+          Matcha ($1.50)
+      </template>
+  </category>
+  
+  <category>
+      <pattern>Do you have a menu suggestion</pattern>
+      <template>
+          <random>
+              <li>Try our house specialty, the tenderloin steak</li>
+              <li>Try our new dish, lasagna</li>
+              <li>Try this refreshing beverage: Matcha</li>
+              <li>Try something from our today's specials: Beef quiche</li>
+          </random>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>^ DELIVERY ^</pattern>
+      <template>We deliver! Order now 1111-1111</template>
+  </category>
+  
+  <category>
+      <pattern>^ DELIVER ^</pattern>
+      <template>
+          <srai>^ DELIVERY ^</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>Can I reserve a table ^</pattern>
+      <template>Sure, what is your name? <think><set name = "n"><star /></set></think></template>
+  </category>
+  
+  <category>
+      <pattern>My name is *</pattern>
+      <that>Sure, what is your name</that>
+      <template>Alright, <formal><star /></formal>. Your reservation <get name = "n"></get> has been made.</template>
+  </category>
+  
+  <category>
+      <pattern>*</pattern>
+      <that>Sure, what is your name</that>
+      <template>
+          <srai>My name is <star /></srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>^ DISCOUNTS ^</pattern>
+      <template>All beverages are 10% off today!</template>
+  </category>
+  
+  <category>
+      <pattern>^ TOILET ^</pattern>
+      <template>The toilet is located on the first floor, behind the stairs</template>
+  </category>
+  
+  <category>
+      <pattern>^ CASH REGISTERS ^</pattern>
+      <template>The cash register is located across the first floor elevator</template>
+  </category>
+
+  <category>
+      <pattern>^ PAYMENT ^</pattern>
+      <template>Available payment methods: Cash, Credit / Debit Cards, PayPal, Apple Pay, Google Pay</template>
+  </category>
+  
+  <category>
+      <pattern>^ FINISHED ^</pattern>
+          <template>Did you enjoy your meal?
+              <button>
+                  <text>Yes</text>
+                  <postback>What score on a scale of 1 to 10 would you like to give to us?</postback>
+              </button>
+              <button>
+                  <text>No</text>
+                  <postback>Can you tell us why?</postback>
+              </button>
+          </template>
+  </category>
+  
+  <category>
+      <pattern>^</pattern>
+      <that>CAN YOU TELL US WHY</that>
+      <template>Thank you for your input. If you need further help, please tell one of our staff.</template>
+  </category>
+  
+  <category>
+      <pattern>^</pattern>
+      <that>WHAT SCORE ON A SCALE OF 1 TO 10 WOULD YOU LIKE TO GIVE TO US</that>
+      <template>Do you have any suggestion for our service?</template>
+  </category>
+  
+  <category>
+      <pattern>^</pattern>
+      <that>DO YOU HAVE ANY SUGGESTION FOR OUR SERVICE</that>
+      <template>Thank you for dining at our restaurant, have a nice day!</template>
+  </category>
+  
+  <category>
+      <pattern>^ ORDER ^</pattern>
+      <template>Firstly can you tell us your preferred taste of choice?</template>
+  </category>
+  
+  <category>
+      <pattern>^</pattern>
+      <that>FIRSTLY CAN YOU TELL US YOUR PREFERRED TASTE OF CHOICE</that>
+      <template>Can I take your order please?</template>
+  </category>
+  
+  <category>
+      <pattern>^</pattern>
+      <that>CAN I TAKE YOUR ORDER PLEASE</that>
+      <template>Alright. An order of <star /> is coming.</template>
+  </category>
+
+</aiml>
